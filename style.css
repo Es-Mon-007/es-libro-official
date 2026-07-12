@@ -1143,7 +1143,7 @@ color:white;
 
 position:absolute;
 
-bottom:20px;
+bottom:15px;
 
 left:50%;
 
@@ -2640,6 +2640,128 @@ border-radius:20px;
         gap:20px;
 
         font-size:10px;
+
+    }
+
+}
+/*==============================
+  BGM BUTTON
+==============================*/
+
+.music-toggle{
+
+    position:fixed;
+
+    right:25px;
+
+    bottom:25px;
+
+    width:58px;
+
+    height:58px;
+
+    border:none;
+
+    border-radius:50%;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(14px);
+
+    -webkit-backdrop-filter:blur(14px);
+
+    border:1px solid rgba(255,255,255,.18);
+
+    color:#ffffff;
+
+    font-size:24px;
+
+    cursor:pointer;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    transition:all .35s ease;
+
+    z-index:9999;
+
+    box-shadow:0 0 12px rgba(0,212,255,.25);
+
+    animation:musicPulse 2.8s ease-in-out infinite;
+
+}
+
+.music-toggle:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:0 0 22px rgba(0,212,255,.75);
+
+}
+
+.music-toggle.muted{
+
+    animation:none;
+
+    box-shadow:none;
+
+    background:rgba(255,255,255,.05);
+
+    color:#999;
+
+}
+
+@keyframes musicPulse{
+
+    0%{
+
+        box-shadow:0 0 8px rgba(0,212,255,.25);
+
+    }
+
+    50%{
+
+        box-shadow:0 0 22px rgba(0,212,255,.75);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 8px rgba(0,212,255,.25);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    .music-toggle{
+
+        width:48px;
+
+        height:48px;
+
+        right:15px;
+
+        bottom:15px;
+
+        font-size:20px;
+
+    }
+
+}
+/* ==========================
+   PCだけSCROLLを下げる
+========================== */
+
+@media (min-width: 769px){
+
+    .scroll-down{
+
+        bottom:15px;
 
     }
 

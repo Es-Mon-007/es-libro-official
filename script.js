@@ -815,3 +815,31 @@ console.log(
 
 
 });
+/*==============================
+  BGM BUTTON
+==============================*/
+
+const bgm = document.getElementById("bgm");
+const musicToggle = document.getElementById("musicToggle");
+
+musicToggle.addEventListener("click", () => {
+
+    if (bgm.paused){
+
+        bgm.play();
+
+        musicToggle.textContent = "🔊";
+
+        musicToggle.classList.remove("muted");
+
+    }else{
+
+        bgm.pause();
+
+        musicToggle.textContent = "🔇";
+
+        musicToggle.classList.add("muted");
+
+    }
+
+});
