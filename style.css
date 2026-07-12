@@ -2611,3 +2611,36 @@ border:none;
 border-radius:20px;
 
 }
+/* =========================
+   PC
+========================= */
+
+.scroll-down{
+
+    bottom:35px;
+
+}
+
+/* =========================
+   スマホ
+========================= */
+
+@media (max-width:768px){
+
+    .scroll-down{
+
+        bottom:10px;
+
+    }
+
+    .hero-scroll-links{
+
+        margin-bottom:60px;
+
+        gap:20px;
+
+        font-size:10px;
+
+    }
+
+}
