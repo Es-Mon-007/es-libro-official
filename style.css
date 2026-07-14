@@ -2766,3 +2766,82 @@ border-radius:20px;
     }
 
 }
+/*==============================
+TODAY'S MESSAGE
+==============================*/
+
+.todays-message{
+
+    margin-top:40px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.message-title{
+
+    font-size:12px;
+
+    letter-spacing:4px;
+
+    color:#00d4ff;
+
+    margin-bottom:15px;
+
+    opacity:.8;
+
+}
+
+#dailyMessage{
+
+    font-size:20px;
+
+    font-weight:300;
+
+    line-height:1.8;
+
+    max-width:700px;
+
+    margin:auto;
+
+    color:white;
+
+    text-shadow:0 0 15px rgba(255,255,255,.2);
+
+    animation:fadeMessage 2s;
+
+}
+
+@keyframes fadeMessage{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:768px){
+
+    #dailyMessage{
+
+        font-size:16px;
+
+        padding:0 20px;
+
+    }
+
+}
