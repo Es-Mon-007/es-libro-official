@@ -2845,3 +2845,86 @@ TODAY'S MESSAGE
     }
 
 }
+/*==============================
+SYSTEM CLOCK
+==============================*/
+
+.system-clock{
+
+    margin-top:35px;
+
+    text-align:center;
+
+    color:white;
+
+}
+
+.clock-title{
+
+    font-size:12px;
+
+    letter-spacing:5px;
+
+    color:#00d4ff;
+
+    opacity:.8;
+
+    margin-bottom:10px;
+
+}
+
+#clock{
+
+    font-size:38px;
+
+    font-weight:300;
+
+    letter-spacing:4px;
+
+    color:#ffffff;
+
+    transition:.25s;
+
+    text-shadow:
+
+        0 0 12px rgba(255,255,255,.2);
+
+}
+
+#clock.flash{
+
+    color:#00d4ff;
+
+    text-shadow:
+
+        0 0 20px #00d4ff,
+
+        0 0 35px #00d4ff;
+
+}
+
+.clock-status{
+
+    margin-top:10px;
+
+    font-size:11px;
+
+    letter-spacing:4px;
+
+    color:#00d4ff;
+
+    opacity:.75;
+
+}
+
+@media(max-width:768px){
+
+    #clock{
+
+        font-size:28px;
+
+        letter-spacing:2px;
+
+    }
+
+}

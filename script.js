@@ -1060,3 +1060,34 @@ today.getDate();
 const index = seed % messages.length;
 
 document.getElementById("dailyMessage").textContent = messages[index];
+/*==============================
+SYSTEM CLOCK
+==============================*/
+
+const clock = document.getElementById("clock");
+
+function updateClock(){
+
+    const now = new Date();
+
+    const h = String(now.getHours()).padStart(2,"0");
+
+    const m = String(now.getMinutes()).padStart(2,"0");
+
+    const s = String(now.getSeconds()).padStart(2,"0");
+
+    clock.textContent = `${h}:${m}:${s} JST`;
+
+    clock.classList.add("flash");
+
+    setTimeout(()=>{
+
+        clock.classList.remove("flash");
+
+    },180);
+
+}
+
+updateClock();
+
+setInterval(updateClock,1000);
