@@ -95,9 +95,9 @@ WATCH LIVE
 
 <li>鉄拳8</li>
 
-<li>VALORANT</li>
+<li>ホグワーツレガシー</li>
 
-<li>Minecraft</li>
+<li>Call of Duty</li>
 
 <li>Apex Legends</li>
 
@@ -128,12 +128,39 @@ status.innerHTML=`
 🟢 LIVE NOW
 </h2>
 
-<p>${data.title}</p>
+<p>${data.liveVideo.title}</p>
 `;
 
-button.href=`https://youtube.com/watch?v=${data.videoId}`;
+button.href=`https://youtube.com/watch?v=${data.liveVideo.videoId}`;
+
+// ライブプレイヤー表示
+const section = document.getElementById("livePlayerSection");
+const player = document.getElementById("livePlayer");
+
+section.style.display = "block";
+
+player.src =
+`https://www.youtube.com/embed/${data.liveVideo.videoId}`;
 
 }else{
+
+status.innerHTML=`
+<h2 style="color:#888;">
+⚪ OFFLINE
+</h2>
+
+<p>
+現在ライブ配信は行っていません。
+</p>
+`;
+
+button.href="https://www.youtube.com/@eslibro4930";
+
+// プレイヤー非表示
+document.getElementById("livePlayerSection").style.display="none";
+document.getElementById("livePlayer").src="";
+
+}
 
 status.innerHTML=`
 <h2 style="color:#888;">
@@ -203,8 +230,10 @@ WATCH
 
 loadArchives();
 
-setInterval(loadLiveStatus,60000);
-
+setInterval(()=>{
+    loadLiveStatus();
+    loadArchives();
+},60000);
 </script>
 
 </body>
