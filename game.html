@@ -140,6 +140,48 @@ document.getElementById("live-status").innerHTML=`
 
 loadLiveStatus();
 
+  async function loadArchives(){
+
+const res = await fetch("/api/youtube");
+
+const data = await res.json();
+
+const area=document.getElementById("archives");
+
+area.innerHTML="";
+
+data.archives.forEach(video=>{
+
+area.innerHTML+=`
+
+<div class="archive-card">
+
+<img src="${video.thumbnail}">
+
+<div class="archive-info">
+
+<h3>${video.title}</h3>
+
+<p>${video.date}</p>
+
+<a href="https://youtube.com/watch?v=${video.videoId}" target="_blank">
+
+WATCH
+
+</a>
+
+</div>
+
+</div>
+
+`;
+
+});
+
+}
+
+loadArchives();
+
 setInterval(loadLiveStatus,60000);
 
 </script>
