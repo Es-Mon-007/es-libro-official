@@ -3162,3 +3162,187 @@ overflow:hidden;
 }
 
 }
+
+/* =================================
+GAME SECTION
+================================= */
+
+.game-container{
+    max-width:1400px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:2fr 1fr;
+    gap:35px;
+}
+
+.game-card{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.12);
+    border-radius:20px;
+    padding:30px;
+    backdrop-filter:blur(18px);
+    transition:.35s;
+}
+
+.game-card:hover{
+    transform:translateY(-6px);
+    border-color:#00d4ff;
+    box-shadow:0 0 30px rgba(0,212,255,.25);
+}
+
+.game-card h3{
+    font-family:'Cinzel',serif;
+    font-size:24px;
+    letter-spacing:3px;
+    margin-bottom:20px;
+    color:#fff;
+}
+
+/* LIVE STATUS */
+
+#live-status{
+    min-height:120px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    color:#ddd;
+    font-size:16px;
+}
+
+/* WATCH BUTTON */
+
+#watchLive{
+    width:100%;
+    margin-top:20px;
+}
+
+/* GAME LIST */
+
+.game-list{
+    list-style:none;
+}
+
+.game-list li{
+    padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,.08);
+    letter-spacing:2px;
+    color:#ddd;
+}
+
+.game-list li:last-child{
+    border-bottom:none;
+}
+
+/* ARCHIVE */
+
+#archives{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+}
+
+.archive-card{
+    display:flex;
+    gap:18px;
+    align-items:center;
+    background:rgba(255,255,255,.04);
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:16px;
+    padding:15px;
+    transition:.3s;
+}
+
+.archive-card:hover{
+    transform:translateY(-4px);
+    border-color:#00d4ff;
+    box-shadow:0 0 20px rgba(0,212,255,.25);
+}
+
+.archive-card img{
+    width:180px;
+    aspect-ratio:16/9;
+    object-fit:cover;
+    border-radius:10px;
+}
+
+.archive-info{
+    flex:1;
+}
+
+.archive-info h4{
+    color:#fff;
+    margin-bottom:8px;
+    font-size:18px;
+}
+
+.archive-info p{
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:15px;
+    line-height:1.6;
+}
+
+.archive-info a{
+    display:inline-block;
+    padding:10px 22px;
+    border-radius:30px;
+    background:#00d4ff;
+    color:#000;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.archive-info a:hover{
+    background:#fff;
+}
+
+/* LIVE PLAYER */
+
+.live-player-section{
+    grid-column:1 / -1;
+    display:none;
+}
+
+.live-title{
+    text-align:center;
+    color:#00ff88;
+    font-size:28px;
+    margin-bottom:20px;
+    letter-spacing:3px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+.game-container{
+    grid-template-columns:1fr;
+}
+
+.archive-card{
+    flex-direction:column;
+    text-align:center;
+}
+
+.archive-card img{
+    width:100%;
+}
+
+}
+
+@media(max-width:768px){
+
+.game-card{
+    padding:22px;
+}
+
+.game-card h3{
+    font-size:20px;
+}
+
+.live-title{
+    font-size:22px;
+}
+
+}
