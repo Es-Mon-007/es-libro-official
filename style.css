@@ -3019,3 +3019,44 @@ border-radius:8px;
 font-weight:bold;
 
 }
+.live-player-section{
+
+width:95%;
+
+max-width:1400px;
+
+margin:50px auto;
+
+padding:30px;
+
+background:rgba(0,0,0,.35);
+
+border:1px solid rgba(0,212,255,.35);
+
+border-radius:18px;
+
+box-shadow:0 0 35px rgba(0,212,255,.2);
+
+}
+
+.live-player-section h2{
+
+color:#00ff88;
+
+text-align:center;
+
+margin-bottom:25px;
+
+font-size:34px;
+
+letter-spacing:4px;
+
+}
+
+.player-wrapper{
+
+border-radius:15px;
+
+overflow:hidden;
+
+}
