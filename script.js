@@ -1625,3 +1625,96 @@ function updateClock(){
 updateClock();
 
 setInterval(updateClock,1000);
+/*==============================
+GAME
+==============================*/
+
+async function loadGame(){
+
+    try{
+
+        const res = await fetch("/api/youtube");
+        const data = await res.json();
+
+        // ライブ状態
+        const status=document.getElementById("live-status");
+
+        if(status){
+
+            if(data.live){
+
+                status.innerHTML=`
+                <h3 style="color:#00ff88;">🟢 LIVE NOW</h3>
+                <p>${data.title}</p>
+                `;
+
+                document.getElementById("watchLive").href=
+                `https://youtube.com/watch?v=${data.videoId}`;
+
+                const player=document.getElementById("livePlayer");
+                const section=document.getElementById("livePlayerSection");
+
+                if(player && section){
+
+                    player.src=
+                    `https://www.youtube.com/embed/${data.videoId}?autoplay=1`;
+
+                    section.style.display="block";
+
+                }
+
+            }else{
+
+                status.innerHTML=`
+                <h3>⚪ OFFLINE</h3>
+                <p>現在ライブ配信は行っていません。</p>
+                `;
+
+            }
+
+        }
+
+        // アーカイブ
+        const area=document.getElementById("archives");
+
+        if(area){
+
+            area.innerHTML="";
+
+            data.archives.forEach(video=>{
+
+                area.innerHTML+=`
+
+                <div class="archive-card">
+
+                    <img src="${video.thumbnail}">
+
+                    <h4>${video.title}</h4>
+
+                    <a
+                    href="https://youtube.com/watch?v=${video.videoId}"
+                    target="_blank">
+
+                    WATCH
+
+                    </a>
+
+                </div>
+
+                `;
+
+            });
+
+        }
+
+    }catch(e){
+
+        console.log(e);
+
+    }
+
+}
+
+loadGame();
+
+setInterval(loadGame,60000);
