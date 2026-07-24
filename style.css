@@ -2944,3 +2944,78 @@ SYSTEM CLOCK
     color:#000;
     box-shadow:0 0 20px #00d4ff;
 }
+.archive-card{
+
+display:flex;
+
+gap:20px;
+
+margin:25px 0;
+
+padding:20px;
+
+background:rgba(255,255,255,.05);
+
+border-radius:12px;
+
+align-items:center;
+
+transition:.3s;
+
+}
+
+.archive-card:hover{
+
+transform:translateY(-4px);
+
+box-shadow:0 0 20px rgba(0,212,255,.3);
+
+}
+
+.archive-card img{
+
+width:280px;
+
+border-radius:10px;
+
+}
+
+.archive-info{
+
+flex:1;
+
+}
+
+.archive-info h3{
+
+color:white;
+
+margin-bottom:10px;
+
+}
+
+.archive-info p{
+
+color:#aaa;
+
+margin-bottom:15px;
+
+}
+
+.archive-info a{
+
+display:inline-block;
+
+padding:10px 22px;
+
+background:#00d4ff;
+
+color:#000;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:bold;
+
+}
